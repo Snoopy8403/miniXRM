@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>
+  {{ data ? "Partner szerkesztése" : "Új partner" }}
+</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Név</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Adószám</mat-label>
+
+      <input
+        matInput
+        formControlName="taxNumber"
+        maxlength="13"
+        appTaxNumberFormat
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cím</mat-label>
+      <input matInput formControlName="address" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Minősítések</mat-label>
+
+      <mat-select formControlName="qualifications" multiple>
+        <mat-option *ngFor="let q of qualifications" [value]="q">
+          {{ q }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Mégse</button>
+
+    <button mat-raised-button color="primary" type="submit">Mentés</button>
+  </div>
+</form>

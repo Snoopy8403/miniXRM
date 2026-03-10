@@ -1,0 +1,24 @@
+.layout {
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  padding: 16px;
+}
+
+.logo {
+  margin-bottom: 24px;
+}
+
+.sidebar button {
+  width: 100%;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 16px;
+}

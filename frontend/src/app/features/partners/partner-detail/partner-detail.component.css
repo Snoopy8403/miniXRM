@@ -1,0 +1,22 @@
+.partner-card {
+  margin-bottom: 20px;
+}
+
+.activity-card {
+  margin-bottom: 20px;
+}
+
+.table-card {
+  margin-top: 20px;
+}
+
+.activity-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+button {
+  grid-column: span 2;
+  width: 200px;
+}

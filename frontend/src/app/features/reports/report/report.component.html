@@ -1,0 +1,21 @@
+<h1>Aktivitás riport</h1>
+
+<table mat-table [dataSource]="data">
+  <ng-container matColumnDef="responsibleName">
+    <th mat-header-cell *matHeaderCellDef>Felelős</th>
+    <td mat-cell *matCellDef="let r">{{ r.responsibleName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="totalMinutes">
+    <th mat-header-cell *matHeaderCellDef>Teljes idő (perc)</th>
+    <td mat-cell *matCellDef="let r">{{ r.totalMinutes }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="partnerCount">
+    <th mat-header-cell *matHeaderCellDef>Partnerek</th>
+    <td mat-cell *matCellDef="let r">{{ r.partnerCount }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

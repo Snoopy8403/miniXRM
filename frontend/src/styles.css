@@ -1,0 +1,13 @@
+.container {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
