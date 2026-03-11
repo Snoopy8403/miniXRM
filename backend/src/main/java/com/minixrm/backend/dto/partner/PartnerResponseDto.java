@@ -7,17 +7,10 @@ import java.util.Set;
 
 @Data
 public class PartnerResponseDto {
-
     private Long id;
-
     private String name;
-
     private String taxNumber;
-
     private String address;
-
     private PartnerStatus status;
-
     private Set<String> qualifications;
-
 }

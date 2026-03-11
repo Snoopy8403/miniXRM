@@ -12,17 +12,11 @@ public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String subject;
-
     private String type;
-
     private String description;
-
     private int durationMinutes;
-
     private String responsibleName;
-
     @ManyToOne
     private Partner partner;
 

@@ -5,11 +5,7 @@ import lombok.Data;
 
 @Data
 public class PartnerUpdateDto {
-
     private String name;
-
     private String address;
-
     private PartnerStatus status;
-
 }

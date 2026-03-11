@@ -20,18 +20,12 @@ public class Partner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     private String taxNumber;
-
     private String address;
-
     @Enumerated(EnumType.STRING)
     private PartnerStatus status;
-
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Qualification> qualifications = new HashSet<>();
-
     private boolean deleted = false;
 }
