@@ -75,3 +75,5 @@ Az alkalmazás standalone komponenseket használ, amelyek csökkentik a boilerpl
 4. **Egyszerűsített state management**: Nincs központi state management (pl. NgRx), csak szolgáltatásokon keresztül történik az adatkezelés. Ez nagyobb alkalmazásoknál problémás lehet.
 
 5. **Minimális design**: Az időhiány miatt csak alapvető elemek kerültek megjelenítésre, lehetne még formálni-igazítani rajta.
+
+6. **Partner szűrés frontenden**: Az időhiány miatt a partnerek listájának a szűrését frontenden oldottam meg, de sokkal jobb megoldás lenne, ha a backenden történne a szűrés. Jelenleg a kevés adat miatt ez még nem számottevő, de sok partner esetén gyorsabb lenne, ha csak azokat az adatokat adná vissza a végpont amire valóban szüksége van.

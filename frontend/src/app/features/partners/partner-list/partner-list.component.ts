@@ -23,6 +23,7 @@ import { Partner } from '../../../models/partner.model';
     RouterModule,
   ],
   templateUrl: './partner-list.component.html',
+  styleUrl: './partner-list.component.css',
 })
 export class PartnerListComponent {
   partners: Partner[] = [];
@@ -34,6 +35,10 @@ export class PartnerListComponent {
     'qualifications',
     'actions',
   ];
+
+  qualifications = ['Aktív', 'Külföldi', 'TOP', 'Export'];
+
+  selectedQualifications: string[] = [];
 
   constructor(
     private partnerService: PartnerService,
@@ -72,17 +77,37 @@ export class PartnerListComponent {
     });
   }
 
-  toggleStatus(partner: Partner) {
-    this.partnerService.toggleStatus(partner.id!).subscribe(() => {
-      this.loadPartners();
-    });
-  }
-
   delete(id: number) {
     this.partnerService.deletePartner(id).subscribe(() => {
       console.log('Partner ID:', id);
 
       this.partners = this.partners.filter((p) => p.id !== id);
     });
+  }
+
+  toggleStatus(partner: Partner) {
+    this.partnerService.toggleStatus(partner.id!).subscribe(() => {
+      this.loadPartners();
+    });
+  }
+
+  toggleQualification(q: string) {
+    if (this.selectedQualifications.includes(q)) {
+      this.selectedQualifications = this.selectedQualifications.filter(
+        (x) => x !== q,
+      );
+    } else {
+      this.selectedQualifications = [...this.selectedQualifications, q];
+    }
+  }
+
+  get filteredPartners(): Partner[] {
+    if (this.selectedQualifications.length === 0) {
+      return this.partners;
+    }
+
+    return this.partners.filter((p) =>
+      p.qualifications.some((q) => this.selectedQualifications.includes(q)),
+    );
   }
 }

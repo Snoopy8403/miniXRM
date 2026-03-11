@@ -5,7 +5,21 @@
     Új partner
   </button>
 
-  <table mat-table [dataSource]="partners">
+  <div class="filter-container">
+    <span class="filter-title">Szűrés minősítés szerint:</span>
+
+    <mat-chip-listbox multiple>
+      <mat-chip-option
+        *ngFor="let q of qualifications"
+        [value]="q"
+        (selectionChange)="toggleQualification(q)"
+      >
+        {{ q }}
+      </mat-chip-option>
+    </mat-chip-listbox>
+  </div>
+
+  <table mat-table [dataSource]="filteredPartners">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Név</th>
       <td mat-cell *matCellDef="let p">{{ p.name }}</td>

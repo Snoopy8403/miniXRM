@@ -1,0 +1,12 @@
+.filter-container {
+  margin: 16px 0;
+}
+
+.filter-title {
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+mat-chip {
+  cursor: pointer;
+}
